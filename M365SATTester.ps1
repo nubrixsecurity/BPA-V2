@@ -1,7 +1,7 @@
 #Requires -Version 5.1
 #Requires -RunAsAdministrator
 
-param ($outPath,$userPrincipalName)
+param ($outPath,$userPrincipalName,$services)
 
 function ExecuteM365SAT
 {
@@ -16,7 +16,7 @@ function ExecuteM365SAT
 		-BenchmarkVersion LATEST `
 		-LicenseMode All `
 		-LicenseLevel All `
-		-EnvironmentType AZURE,M365
+		-EnvironmentType $services
   
 	Remove-Module M365SAT -Force
 }
